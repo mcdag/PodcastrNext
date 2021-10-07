@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 
 export function Header(){
   const currentDate = format(new Date(), 'EEEEEE, d MMMM', {
-    locale: ptBR,
+    locale: ptBR, 
   });
 
   return(
