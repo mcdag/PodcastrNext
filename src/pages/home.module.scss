@@ -64,7 +64,7 @@
           position: relative;
       
           &:last-child {
-            margin-left: 0.5rem;
+            margin-left: 1rem;
             padding-left: 0.5;
             position: relative;
             
@@ -75,7 +75,7 @@
               border-radius: 2px;
               background: #DDD;
               position: absolute;
-              left: 0;
+              left: -0.5rem;
               top: 50%;
               transform: translate(-50%, -50%)
             }
