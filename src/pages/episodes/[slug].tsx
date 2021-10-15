@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/link-passhref */
-/* eslint-disable @next/next/no-img-element */
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import Image from 'next/image';
@@ -9,6 +7,7 @@ import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
 import styles from './episode.module.scss';
+import { usePlayer } from '../../contexts/PlayerContext';
 
 type Episode = {
   id: string;
@@ -27,11 +26,13 @@ type EpisodeProps = {
 }
 
 export default function Episode({episode }: EpisodeProps){
+  const { play } = usePlayer();
+
   return(
     <div className={styles.episode}>
       <div className={styles.thumbnailContainer}>
         <Link href='/'>
-          <button type='button'>
+          <button type='button' onClick={() => play(episode)}>
             <img src='/arrow-left.svg' alt='Voltar' />
           </button>
         </Link>
